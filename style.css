@@ -1,0 +1,39 @@
+
+
+body {
+    color: white;
+    text-align: center;
+    background-color: black;
+    font-family: "Roboto", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+/*#card {*/
+/*    width: 680px;*/
+/*}*/
+
+#front, #back {
+    aspect-ratio: 1125/675;
+    border: solid 2px;
+    width: 675px;
+    background-size: cover;
+    background-image: url('assets/background.webp');
+}
+
+#back {
+    margin-top: 2px;
+}
+
+@media (min-width: 1024px) {
+    body {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
