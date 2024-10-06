@@ -2,58 +2,30 @@
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
-    <title>Leitor de Código de Barras</title>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/quagga/0.12.1/quagga.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/jsbarcode@3.11.0/dist/barcodes/JsBarcode.code39.min.js"></script>
-    <script src="https://html2canvas.hertzen.com/dist/html2canvas.js"></script>
-
+    <title>Gerador de carteirinhas do RU</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400&display=swap" rel="stylesheet">
 
     <meta name="darkreader-lock">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="index.css">
 </head>
 <body>
-<section>
     <h1>Gerador de carteirinha do RU</h1>
-    <div>
-        <p>Selecione a sua carteirinha do RU:</p>
-        <input type="file" id="selector_code" accept="image/*">
-        <p>Selecione a sua imagem de fundo da frente da carteirinha:</p>
-        <input type="file" id="selector_bg_front" accept="image/*">
-        <p>Selecione a sua imagem de fundo da costa da carteirinha:</p>
-        <input type="file" id="selector_bg_back" accept="image/*">
-        <p>Selecione a sua imagem de perfil:</p>
-        <input type="file" id="selector_pfp" accept="image/*">
-        <p>Digite seu nome:</p>
-        <input id="selector_name">
-        <p>Digite seu curso:</p>
-        <input id="selector_course">
-        <p></p>
-        <button class="bg-white rounded-lg text-black px-2" onclick="download()">Clique aqui para baixar a imagem</button>
-    </div>
-</section>
+    <h2>Como funciona?</h2>
+    <p>1 - Tire uma screenshot ou baixe sua carteira do RU pelo SIGAA(tem que ser em .png)</p>
+    <p>2 - Selecione a sua foto de perfil, imagens de fundo, nome e curso</p>
+    <p>3 - Baixe sua carteirinha nova</p>
+<!--    <p>Quer saber detalhes a fundo? Visite este link</p>-->
+    <p>Quer saber o código? Visite <a href="https://github.com/uotlaf/gerador_carteirinha_ru">este repositório</a></p>
 
-
-<section>
-    <div id="card" style="display: inline-block">
-        <div id="front" class="card_face" style="display: flex; flex-direction: column; justify-content: end;">
-            <div>
-                <img id="pfp_front" style="aspect-ratio: 1; border-radius: 100%; object-fit: cover; width:25%;" src="assets/pfp.png" draggable="false">
-                <div id="data" style="background-color: #00000050;">
-                    <span id="name" style="font-size: 24px;">Meu nome</span> <br>
-                    <span id="course" style="font-size: 20px">Meu curso</span>
-                </div>
-            </div>
-            <div style="background-color: white">
-                <canvas id="code"></canvas>
-            </div>
-        </div>
-        <div id="back" class="card_face">
-        </div>
+    <h2>Selecione um template:</h2>
+    <div style="display: flex; justify-content: center;">
+        <a href="type1.html" style="margin-right: 10px">
+            <img src="assets/type1.png" style="width:256px">
+        </a>
+        <a href="type2.html">
+            <img src="assets/type2.png" style="width:256px">
+        </a>
     </div>
-</section>
-<script src="code.js"></script>
 </body>
-</html>

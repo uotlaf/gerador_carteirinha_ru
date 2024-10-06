@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Gerador de carteirinhas do RU - Tipo 1</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/quagga/0.12.1/quagga.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jsbarcode@3.11.0/dist/barcodes/JsBarcode.code39.min.js"></script>
+    <script src="https://html2canvas.hertzen.com/dist/html2canvas.js"></script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400&display=swap" rel="stylesheet">
+
+    <meta name="darkreader-lock">
+    <link rel="stylesheet" href="type2.css">
+</head>
+<body>
+<section>
+    <h1>Gerador de carteirinha do RU</h1>
+    <div>
+        <p>Selecione a sua carteirinha do RU:</p>
+        <input type="file" id="selector_code" accept="image/*">
+        <p>Selecione a sua imagem de fundo da frente da carteirinha:</p>
+        <input type="file" id="selector_bg_front" accept="image/*">
+        <p>Selecione a sua imagem de fundo da costa da carteirinha:</p>
+        <input type="file" id="selector_bg_back" accept="image/*">
+        <p>Selecione a sua imagem de perfil:</p>
+        <input type="file" id="selector_pfp" accept="image/*">
+        <p>Digite seu nome:</p>
+        <input id="selector_name">
+        <p>Digite seu curso:</p>
+        <input id="selector_course">
+        <p></p>
+        <button class="bg-white rounded-lg text-black px-2" onclick="download()">Clique aqui para baixar a imagem</button>
+    </div>
+</section>
+
+
+<section>
+    <div id="card" style="display: inline-block">
+        <div id="front" class="card_face" style="display: flex; flex-direction: column; justify-content: center;">
+            <div>
+                <img id="pfp_front" style="aspect-ratio: 1; border-radius: 100%; object-fit: cover; width:25%;" src="assets/pfp.png" draggable="false">
+                <div id="data" style="background-color: #00000050;">
+                    <span id="name" style="font-size: 24px;">Meu nome</span> <br>
+                    <span id="course" style="font-size: 20px">Meu curso</span>
+                </div>
+            </div>
+        </div>
+        <div id="back" class="card_face">
+            <div style="background-color: white">
+                <canvas id="code"></canvas>
+            </div>
+        </div>
+    </div>
+</section>
+<script src="type2.js"></script>
+</body>
+</html>
