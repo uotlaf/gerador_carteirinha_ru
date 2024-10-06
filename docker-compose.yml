@@ -1,0 +1,8 @@
+services:
+  main:
+    image: nginx
+    container_name: gerador_de_carteirinha
+    ports:
+      - 80:80
+    volumes:
+      - .:/usr/share/nginx/html:ro

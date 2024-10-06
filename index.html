@@ -26,6 +26,10 @@
         <input type="file" id="selector_bg_back" accept="image/*">
         <p>Selecione a sua imagem de perfil:</p>
         <input type="file" id="selector_pfp" accept="image/*">
+        <p>Digite seu nome:</p>
+        <input id="selector_name">
+        <p>Digite seu curso:</p>
+        <input id="selector_course">
         <p></p>
         <button class="bg-white rounded-lg text-black px-2" onclick="download()">Clique aqui para baixar a imagem</button>
     </div>
@@ -33,26 +37,21 @@
 
 
 <section>
-    <div>
-    <div id="card">
-        <div id="front" style="display: flex; flex-direction: column; justify-content: end;">
-            <div class="flex flex-1 justify-center flex-col mt-24">
-                <img id="pfp_front" style="aspect-ratio: 1; border-radius: 100%; object-fit: cover; width:160px;" src="assets/pfp.png" draggable="false">
+    <div id="card" style="display: inline-block">
+        <div id="front" class="card_face" style="display: flex; flex-direction: column; justify-content: end;">
+            <div>
+                <img id="pfp_front" style="aspect-ratio: 1; border-radius: 100%; object-fit: cover; width:25%;" src="assets/pfp.png" draggable="false">
                 <div id="data" style="background-color: #00000050;">
-                    <input id="name" style="background-color: transparent; color: white; border: none; width: 100%; text-align: center; font-size: 24px;"
-                           placeholder="Clique aqui para editar seu nome">
-                    <br>
-                    <input id="course" style="background-color: transparent; color: white; border: none; width: 100%; text-align: center; font-size: 20px;"
-                           placeholder="Clique aqui para editar seu curso">
+                    <span id="name" style="font-size: 24px;">Meu nome</span> <br>
+                    <span id="course" style="font-size: 20px">Meu curso</span>
                 </div>
             </div>
             <div style="background-color: white">
                 <canvas id="code"></canvas>
             </div>
         </div>
-        <div id="back">
+        <div id="back" class="card_face">
         </div>
-    </div>
     </div>
 </section>
 <script src="code.js"></script>
