@@ -9,11 +9,10 @@ document.getElementById('selector_code').addEventListener('change', function (ev
             const blob = new Blob([e.target.result], {type: file.type});
             Quagga.decodeSingle({
                 src: URL.createObjectURL(blob),
-                numOfWorkers: 0,  // Use 0 for synchronous processing
                 decoder: {
-                    readers: ["code_39_reader"] // Especifica o tipo de código de barras
+                    readers: ["code_39_reader"]
                 },
-                locate: true, // Localiza o código de barras na imagem
+                locate: true,
             }, function (result) {
                 if (result && result.codeResult) {
                     code = result.codeResult.code
