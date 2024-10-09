@@ -12,6 +12,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400&display=swap" rel="stylesheet">
 
     <meta name="darkreader-lock">
+    <link rel="stylesheet" href="common.css">
     <link rel="stylesheet" href="type1.css">
 </head>
 <body>
@@ -40,7 +41,10 @@
     <div id="card" style="display: inline-block">
         <div id="front" class="card_face" style="display: flex; flex-direction: column; justify-content: end;">
             <div>
-                <img id="pfp_front" style="aspect-ratio: 1; border-radius: 100%; object-fit: cover; width:25%;" src="assets/pfp.png" draggable="false">
+                <!-- Conserta o aspect ratio errado no html2canvas -->
+                <div style="display: flex; justify-content: center">
+                    <div id="pfp_front" class="pfp"></div>
+                </div>
                 <div id="data" style="background-color: #00000050;">
                     <span id="name" style="font-size: 24px;">Meu nome</span> <br>
                     <span id="course" style="font-size: 20px">Meu curso</span>

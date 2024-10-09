@@ -1,4 +1,4 @@
-const codeOptions = {'width': 4, 'height': 381, 'displayValue': false};
+const codeOptions = {'width': 3, 'height': 381, 'displayValue': false};
 let code = "TESTCODE";
 
 document.getElementById('selector_code').addEventListener('change', readCode);
@@ -14,7 +14,7 @@ function download() {
     });
 
     JsBarcode(document.getElementById("code"), code, {
-        'width': 12,
+        'width': 8,
         'height': 1180,
         'displayValue': false
     });
@@ -22,7 +22,7 @@ function download() {
     document.getElementById('name').style.fontSize = "88px";
     document.getElementById('course').style.fontSize = "46px";
 
-    downloadCard()
+    downloadCardPNG()
 
     faces.forEach(function (face) {
         face.style.width = "675px";

@@ -6,14 +6,17 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/quagga/0.12.1/quagga.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/jsbarcode@3.11.0/dist/barcodes/JsBarcode.code39.min.js"></script>
     <script src="https://html2canvas.hertzen.com/dist/html2canvas.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jspdf@2.5.2/dist/jspdf.umd.min.js"></script>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400&display=swap" rel="stylesheet">
 
+
     <meta name="darkreader-lock">
     <link rel="stylesheet" href="common.css">
-    <link rel="stylesheet" href="type1.css">
+    <link rel="stylesheet" href="kindle.css">
+
 </head>
 <body>
 <section>
@@ -30,7 +33,9 @@
         <p>Digite seu curso:</p>
         <input id="selector_course">
         <p></p>
-        <button class="bg-white rounded-lg text-black px-2" onclick="download()">Clique aqui para baixar a imagem</button>
+        <button class="bg-white rounded-lg text-black px-2" onclick="downloadPNG()">Clique aqui para baixar a imagem em PNG</button> <br>
+        <button class="bg-white rounded-lg text-black px-2" onclick="downloadPDF()">Clique aqui para baixar a imagem em PDF</button>
+
     </div>
 </section>
 
@@ -41,22 +46,20 @@
             <div>
                 <!-- Conserta o aspect ratio errado no html2canvas -->
                 <div style="display: flex; justify-content: center">
-                    <div id="pfp_front" class="pfp"></div>
+                   <div id="pfp_front" class="pfp"></div>
                 </div>
                 <div id="data" style="background-color: #00000050;">
-                    <span id="name" style="font-size: 24px;">Meu nome</span> <br>
-                    <span id="course" style="font-size: 20px">Meu curso</span>
+                    <span id="name" style="font-size: 48px;">Meu nome</span> <br>
+                    <span id="course" style="font-size: 40px">Meu curso</span> <br>
                 </div>
-            </div>
-        </div>
-        <div id="back" class="card_face">
-            <div style="background-color: white">
-                <canvas id="code"></canvas>
+                <div style="background-color: white">
+                    <canvas id="code"></canvas>
+                </div>
             </div>
         </div>
     </div>
 </section>
 <script src="common.js"></script>
-<script src="type2.js"></script>
+<script src="kindle.js"></script>
 </body>
 </html>

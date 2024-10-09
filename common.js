@@ -32,7 +32,7 @@ function changeBackImage(event) {
 }
 
 function changeFrontPFP(event) {
-    document.getElementById('pfp_front').src = URL.createObjectURL(event.target.files[0]);
+    document.getElementById('pfp_front').style.backgroundImage = "url(" + URL.createObjectURL(event.target.files[0]) + ")";
 }
 
 function changeBackPFP(event) {
@@ -47,7 +47,7 @@ function changeCourse(event) {
     document.getElementById('course').textContent = event.target.value;
 }
 
-function downloadCard() {
+function downloadCardPNG() {
     html2canvas(document.getElementById("card")).then(function (canvas) {
         const link = document.createElement('a');
 
@@ -59,5 +59,19 @@ function downloadCard() {
         document.body.appendChild(link);
         link.click();
         document.body.removeChild(link);
+    });
+}
+
+function downloadCardPDF() {
+    html2canvas(document.getElementById("card")).then(function (canvas) {
+        const link = document.createElement('a');
+
+        const doc = new jspdf.jsPDF({
+                unit: "px",
+                format: finalPageOptions["page.format"]
+            }
+        );
+        doc.addImage(canvas.toDataURL(), 'PNG', 0, 0, finalPageOptions["page.format"][0], finalPageOptions["page.format"][1]);
+        doc.save('carteirinha.pdf')
     });
 }
